@@ -5,18 +5,46 @@ output:
     self-contained: false
     css: 
       - "css/landscape.css"
+      - "css/report.css"
       
 ---
 
-Introduction
+::::{.grid-page}
 
-This is an example of a multi-page HTML document. See https://pagedown.rbind.io for the full documentation. The rest of this document is random text.
+:::{.title}
+Title
+:::
 
-Random text
+:::{.topbar}
+Text in the top
+:::
 
-```{r, results='asis', echo = FALSE}
-x <- "hello"
+:::{.sidebar}
+Text in the side
+:::
 
-print(x)
+:::{.content1}
+CONTENT
+:::
 
-```
+::::
+
+::::{.grid-page .single-content}
+
+:::{.title}
+Title
+:::
+
+:::{.topbar}
+Text in the top
+:::
+
+:::{.sidebar}
+Text in the side
+:::
+
+:::{.content1}
+CONTENT
+:::
+
+::::

@@ -1,3 +1,72 @@
-@page {
-  size: a4 landscape;
+:root {
+  --pagedjs-margin-left: 16mm !important;
+  --pagedjs-margin-right: 16mm !important;
+  --pagedjs-margin-top: 16mm !important;
+  --pagedjs-margin-bottom: 25mm !important;
+  --co-primary-blue: #005abb;
+  --co-secondary-blue: #5bb4e5;
+  --co-primary-grey: #4d4e53;
+  --co-secondary-grey: #cacac8;
+  --co-dark-blue: #1a2792;
+  --co-violet: #78256e;
+  --co-red: #a23138;
+  --co-orange: #cc5a13;
+  --co-yellow: #ecac00;
+  --co-green: #879637;
+  --co-aqua: #57bab7;
+}
+
+.grid-page {
+  break-after: page;
+  display: grid;
+  justify-content: start;
+  align-content: start;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  height: 100%;
+  color: var(--co-primary-grey);
+  font-size: 10pt;
+}
+
+.grid-page p {
+  margin: 0px;
+}
+
+@media print{
+  .grid-page {
+    grid-template-rows: repeat(6, 24mm);
+    grid-template-columns: repeat(6, 40mm);
+    grid-gap: 5mm;
+  }
+
+}
+
+@media screen{
+  .grid-page {
+    grid-gap: 10px;
+  }
+}
+
+.title{
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  font-size: 25pt;
+  color: var(--co-primary-blue);
+}
+
+.sidebar{
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 4;
+}
+
+.topbar {
+  grid-column: 3 / span 4;
+  grid-row: 1 / span 2;
+}
+
+.content1 {
+  grid-column: 3 / span 4;
+  grid-row: 3 / span 4;
+  background-color: var(--co-secondary-grey);
 }

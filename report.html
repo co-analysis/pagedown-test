@@ -18,7 +18,7 @@
 <meta name="description" content="Test">
 
 <script id="pandoc-meta" type="application/json">
-{"newpage_html_class":"page-break-after","pagetitle":"Test","output":{"pagedown::html_paged":{"css":["css/landscape.css"],"self-contained":false}}}
+{"newpage_html_class":"page-break-after","pagetitle":"Test","output":{"pagedown::html_paged":{"css":["css/landscape.css","css/report.css"],"self-contained":false}}}
 </script>
 
 <title>Test</title>
@@ -28270,6 +28270,70 @@ margin: auto auto var(--screen-pages-spacing) auto;
 }
 }
 </style>
+<style type="text/css">:root {
+--pagedjs-margin-left: 16mm !important;
+--pagedjs-margin-right: 16mm !important;
+--pagedjs-margin-top: 16mm !important;
+--pagedjs-margin-bottom: 25mm !important;
+--co-primary-blue: #005abb;
+--co-secondary-blue: #5bb4e5;
+--co-primary-grey: #4d4e53;
+--co-secondary-grey: #cacac8;
+--co-dark-blue: #1a2792;
+--co-violet: #78256e;
+--co-red: #a23138;
+--co-orange: #cc5a13;
+--co-yellow: #ecac00;
+--co-green: #879637;
+--co-aqua: #57bab7;
+}
+.grid-page {
+break-after: page;
+display: grid;
+justify-content: start;
+align-content: start;
+grid-template-rows: repeat(6, 1fr);
+grid-template-columns: repeat(6, 1fr);
+grid-gap: 10px;
+height: 100%;
+color: var(--co-primary-grey);
+font-size: 10pt;
+}
+.grid-page p {
+margin: 0px;
+}
+@media print{
+.grid-page {
+grid-template-rows: repeat(6, 24mm);
+grid-template-columns: repeat(6, 40mm);
+grid-gap: 5mm;
+}
+}
+@media screen{
+.grid-page {
+grid-gap: 10px;
+}
+}
+.title{
+grid-column: 1 / span 2;
+grid-row: 1 / span 2;
+font-size: 25pt;
+color: var(--co-primary-blue);
+}
+.sidebar{
+grid-column: 1 / span 2;
+grid-row: 3 / span 4;
+}
+.topbar {
+grid-column: 3 / span 4;
+grid-row: 1 / span 2;
+}
+.content1 {
+grid-column: 3 / span 4;
+grid-row: 3 / span 4;
+background-color: var(--co-secondary-grey);
+}
+</style>
 
 </head>
 
@@ -28288,10 +28352,34 @@ margin: auto auto var(--screen-pages-spacing) auto;
 </div>
 
 <div class="main">
-<p>Introduction</p>
-<p>This is an example of a multi-page HTML document. See <a href="https://pagedown.rbind.io" class="uri">https://pagedown.rbind.io</a> for the full documentation. The rest of this document is random text.</p>
-<p>Random text</p>
-<p>[1] “hello”</p>
+<div class="grid-page">
+<div class="title">
+<p>Title</p>
+</div>
+<div class="topbar">
+<p>Text in the top</p>
+</div>
+<div class="sidebar">
+<p>Text in the side</p>
+</div>
+<div class="content1">
+<p>CONTENT</p>
+</div>
+</div>
+<div class="grid-page single-content">
+<div class="title">
+<p>Title</p>
+</div>
+<div class="topbar">
+<p>Text in the top</p>
+</div>
+<div class="sidebar">
+<p>Text in the side</p>
+</div>
+<div class="content1">
+<p>CONTENT</p>
+</div>
+</div>
 </div>
 
 
