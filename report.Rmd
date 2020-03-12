@@ -32,19 +32,19 @@ CONTENT
 ::::{.grid-page .single-content}
 
 :::{.title}
-Title
+This page shows a chart
 :::
 
 :::{.topbar}
-Text in the top
-:::
-
-:::{.sidebar}
-Text in the side
+Here is some dummy text, with a plot
 :::
 
 :::{.content1}
-CONTENT
+```{r echo=FALSE, fig.height=4}
+ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp)) +
+  ggplot2::geom_point() +
+  govstyle::theme_gov()
+```
 :::
 
 ::::

@@ -68,5 +68,5 @@
 .content1 {
   grid-column: 3 / span 4;
   grid-row: 3 / span 4;
-  background-color: var(--co-secondary-grey);
+  border-color: var(--co-secondary-grey);
 }
