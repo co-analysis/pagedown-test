@@ -1,0 +1,22 @@
+---
+pagetitle: "Test"
+output:
+  pagedown::html_paged:
+    self-contained: false
+    css: 
+      - "css/landscape.css"
+      
+---
+
+Introduction
+
+This is an example of a multi-page HTML document. See https://pagedown.rbind.io for the full documentation. The rest of this document is random text.
+
+Random text
+
+```{r, results='asis', echo = FALSE}
+x <- "hello"
+
+print(x)
+
+```
