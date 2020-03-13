@@ -2,49 +2,591 @@
 pagetitle: "Test"
 output:
   pagedown::html_paged:
-    self-contained: false
+    self-contained: FALSE
     css: 
       - "css/landscape.css"
       - "css/report.css"
       
 ---
+``` {r, include=FALSE}
+knitr::opts_chunk$set(out.width = "98%", out.height = "98%")
+knitr::opts_chunk$set(fig.path = "imgs/")
+library(tidyverse)
+```
 
-::::{.grid-page}
+::::{.grid-page .front-cover}
 
-:::{.title}
+:::{.logo .test}
+logo
+:::
+
+:::{.title .test}
 Title
 :::
 
-:::{.topbar}
-Text in the top
+:::{.panel}
 :::
 
-:::{.sidebar}
-Text in the side
+:::{.subtitle .test}
+Subtitle
 :::
 
-:::{.content1}
-CONTENT
+:::{.date .test}
+Date
 :::
 
 ::::
 
 ::::{.grid-page .single-content}
 
-:::{.title}
-This page shows a chart
+:::{.title .test}
+Single content
 :::
 
-:::{.topbar}
-Here is some dummy text, with a plot
+:::{.maintext .test}
+Main text
 :::
 
-:::{.content1}
-```{r echo=FALSE, fig.height=4}
-ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp)) +
-  ggplot2::geom_point() +
+:::{.secondarytext .test}
+Secondary text
+:::
+
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
   govstyle::theme_gov()
 ```
 :::
 
 ::::
+
+::::{.grid-page .single-content-wide}
+
+:::{.title .test}
+Single content (wide)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=10.43}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .single-content-high}
+
+:::{.title .test}
+Single content (high)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=6.65, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .two-col}
+
+:::{.title .test}
+Two column
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.secondarytext .test}
+Secondary text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=3.34}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=3.34}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .two-col-wide}
+
+:::{.title .test}
+Two column (wide)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=5.11}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=5.11}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .three-col}
+
+:::{.title .test}
+Three column
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=3.34}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=3.34}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=4.37, fig.width=3.34}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .two-row}
+
+:::{.title .test}
+Two row
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.secondarytext .test}
+Secondary text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .two-row-high}
+
+:::{.title .test}
+Two row (high)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=3.22, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=3.22, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+
+::::
+
+
+::::{.grid-page .three-row}
+
+:::{.title .test}
+Three row
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=6.88}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .three-row-small}
+
+:::{.title .test}
+Three row
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .four-content}
+
+:::{.title .test}
+Four content
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.secondarytext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content4 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .four-content-wide}
+
+:::{.title .test}
+Four content (wide)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=5.11}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=5.11}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=5.11}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content4 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=5.11}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .four-content-high}
+
+:::{.title .test}
+Four content (high)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=3.22, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=3.22, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=3.22, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content4 .test}
+```{r echo=FALSE, fig.height=3.22, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .six-content-wide}
+
+:::{.title .test}
+Six content (wide)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content4 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content5 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content6 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
+::::{.grid-page .six-content-high}
+
+:::{.title .test}
+Six content (wide)
+:::
+
+:::{.maintext .test}
+Main text
+:::
+
+:::{.content1 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content2 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content3 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content4 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content5 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+:::{.content6 .test}
+```{r echo=FALSE, fig.height=2.08, fig.width=3.44}
+ggplot(mtcars, aes(x = mpg, y = disp)) +
+  geom_point() +
+  govstyle::theme_gov()
+```
+:::
+
+::::
+
