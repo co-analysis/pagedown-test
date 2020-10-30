@@ -2,10 +2,10 @@
 pagetitle: "Test"
 output:
   pagedown::html_paged:
-    self-contained: FALSE
     css: 
       - "css/landscape.css"
       - "css/report.css"
+      - "css/report-fonts.css"
       
 ---
 ``` {r, include=FALSE}

@@ -32,6 +32,14 @@
   margin: 0px;
 }
 
+.grid-page div {
+  display: flex;
+}
+
+img {
+  margin: auto;
+}
+
 @media print{
   .grid-page {
     grid-template-rows: repeat(6, 24mm);
@@ -54,6 +62,23 @@
   color: var(--co-primary-blue);
 }
 
+.test {
+  border: 1px solid var(--co-secondary-grey);
+}
+
+
+.maintext {
+
+}
+
+.secondarytext {
+
+}
+
+.content {
+
+}
+
 /* Front cover */
 .front-cover .logo {
   grid-column: 1 / span 1;
@@ -65,6 +90,7 @@
   grid-row: 1 / span 2;
   display: flex;
   padding: 10pt;
+  string-set: reportTitle content(text);
 }
 
 .front-cover .title p {
@@ -439,7 +465,3 @@
   grid-row: 3 / span 4;
 }
 
-
-.test {
-  border: 1px solid var(--co-secondary-grey);
-}
